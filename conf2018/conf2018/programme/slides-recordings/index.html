@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en-GB" prefix="og: http://ogp.me/ns#"><head><base href="conf2018/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Slides & Recordings - RSE2018</title><meta property="og:locale" content="en_GB"><meta property="og:type" content="article"><meta property="og:title" content="Slides & Recordings - RSE2018"><meta property="og:description" content="Hands-on workshops Getting more Python Performance with Intel® optimized Distribution for Python Jim Cownie The slides used during the workshops can be downloaded from RSE18_Intel_Python_Workshop. The K-Means example used is pretty close to the one available from the scikit-learn examples"><meta property="og:url" content="https://socrse.github.io/legacy-website/conf2018/programme/slides-recordings/"><meta property="og:site_name" content="RSE2018"><meta property="og:image" content="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2018/03/intSFT_1s-300x255.png"><meta name="twitter:card" content="summary"><meta name="twitter:description" content="Hands-on workshops Getting more Python Performance with Intel® optimized Distribution for Python Jim Cownie The slides used during the workshops can be downloaded from RSE18_Intel_Python_Workshop. The K-Means example used is pretty close to the one available from the scikit-learn examples"><meta name="twitter:title" content="Slides & Recordings - RSE2018"><meta name="twitter:image" content="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2018/03/intSFT_1s-300x255.png"><link rel="dns-prefetch" href="//s0.wp.com"><link rel="dns-prefetch" href="//secure.gravatar.com"><link rel="dns-prefetch" href="//platform-api.sharethis.com"><link rel="dns-prefetch" href="//fonts.googleapis.com"><link rel="dns-prefetch" href="//s.w.org"><link rel="stylesheet" id="it_epoll_style-css" href="https://socrse.github.io/legacy-website/conf2018/wp-content/plugins/epoll-wp-voting/assets/css/it_epoll_frontendv3.css" type="text/css" media="all"><link rel="stylesheet" id="parent-style-css" href="https://socrse.github.io/legacy-website/conf2018/wp-content/themes/masonic/style.css" type="text/css" media="all"><link rel="stylesheet" id="masonic-style-css" href="https://socrse.github.io/legacy-website/conf2018/wp-content/themes/rse/style.css" type="text/css" media="all"><link rel="stylesheet" id="masonic-google-fonts-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300italic%2C700&ver=4.9.13" type="text/css" media="all"><link rel="stylesheet" id="masonic-font-awesome-css" href="https://socrse.github.io/legacy-website/conf2018/wp-content/themes/masonic/font-awesome/css/font-awesome.min.css" type="text/css" media="all"><link rel="stylesheet" id="social-logos-css" href="https://socrse.github.io/legacy-website/conf2018/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css" type="text/css" media="all"><link rel="stylesheet" id="jetpack_css-css" href="https://socrse.github.io/legacy-website/conf2018/wp-content/plugins/jetpack/css/jetpack.css" type="text/css" media="all"><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-includes/js/jquery/jquery.js"></script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-includes/js/jquery/jquery-migrate.min.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+var it_epoll_ajax_obj = {"ajax_url":"https:\/\/socrse.github.io\/legacy-website\/conf2018\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/plugins/epoll-wp-voting/assets/js/it_epoll_votev3.js"></script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/plugins/epoll-wp-voting/assets/js/it_epoll_frontendv3.js"></script><script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#product=ga"></script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/plugins/jetpack/_inc/build/spin.min.js"></script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/plugins/jetpack/_inc/build/jquery.spin.min.js"></script><link rel="dns-prefetch" href="//v0.wordpress.com"><link rel="dns-prefetch" href="//widgets.wp.com"><link rel="dns-prefetch" href="//s0.wp.com"><link rel="dns-prefetch" href="//0.gravatar.com"><link rel="dns-prefetch" href="//1.gravatar.com"><link rel="dns-prefetch" href="//2.gravatar.com"><link rel="dns-prefetch" href="//i0.wp.com"><link rel="dns-prefetch" href="//i1.wp.com"><link rel="dns-prefetch" href="//i2.wp.com"><style type="text/css">img#wpstats{display:none}</style><style type="text/css">
+	     blockquote { border-left: 2px solid #97316e; }
+           .post-header .entry-author, .post-header .entry-standard, .post-header .entry-date, .post-header .entry-tag { color: #97316e; }
+           .entry-author, .entry-standard, .entry-date { color: #97316e; }
+           a:hover { color: #97316e; }
+           .widget_recent_entries li:before, .widget_recent_comments li:before { color: #97316e; }
+           .underline { background: none repeat scroll 0 0 #97316e; }
+           .widget-title { border-left: 3px solid #97316e; }
+           .sticky { border: 1px solid #97316e; }
+           .footer-background { border-top: 5px solid #97316e; }
+           .site-title a:hover { color: #97316e; }
+           button, input[type="button"], input[type="reset"], input[type="submit"] { background: none repeat scroll 0 0 #97316e; }
+           .breadcrums span { color: #97316e; }
+           .button:hover { color: #97316e; }
+           .catagory-type a:hover { color: #97316e; }
+           .copyright a span { color: #97316e; }
+           button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { color: #97316e; }
+           .widget_rss li a:hover { color: #97316e; }
+           @media screen and (max-width: 768px) { nav li:hover ul li a:hover, nav li a:hover { background: #97316e; } }
+           .entry-date a .entry-date:hover { color: #97316e; }
+           .wp-pagenavi a, .wp-pagenavi span { border: 1px solid #97316e; }
+           </style><style type="text/css">
+                  .site-title,
+            .site-description {
+               position: absolute;
+               clip: rect(1px, 1px, 1px, 1px);
+            }
+               </style><link rel="stylesheet" type="text/css" id="wp-custom-css" href="https://socrse.github.io/legacy-website/conf2018/"></head><body class="page-template-default page page-id-978 page-child parent-pageid-390">
+    <div id="page" class="hfeed site">
+        <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+        <header id="masthead" class="site-header clear"><div class="header-image">
+                                    <figure><img src="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2017/11/banner-3.png" width="1350" height="250" alt=""><div class="angled-background"></div>
+                    </figure></div> 
+
+            <div class="site-branding clear">
+                <div class="wrapper site-header-text clear">
+
+                    <div class="logo-img-holder ">
+                        
+                                                    </div>
+
+                        <div class="main-header">
+                                                            <h3 class="site-title"><a href="https://socrse.github.io/legacy-website/conf2018/" rel="home">RSE2018</a></h3>
+                                                                            </div>
+                </div>
+            </div>
+
+            <nav class="navigation clear"><input type="checkbox" id="masonic-toggle" name="masonic-toggle"><label for="masonic-toggle" id="masonic-toggle-label" class="fa fa-navicon fa-2x"></label>
+                <div class="wrapper clear" id="masonic">
+                    <ul id="menu-main-menu" class="menu wrapper clear"><li id="menu-item-23" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23"><a href="http://rse.ac.uk">RSE UK Home</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-22"><a href="https://socrse.github.io/legacy-website/conf2018/">RSE Conference 2018</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://socrse.github.io/legacy-website/conf2018/contacts/">Contacts</a></li>
+<li id="menu-item-392" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-392"><a href="https://socrse.github.io/legacy-website/conf2018/programme/">Programme</a>
+<ul class="sub-menu"><li id="menu-item-399" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-399"><a href="https://socrse.github.io/legacy-website/conf2018/workshop-abstracts/">Workshop Abstracts</a></li>
+	<li id="menu-item-400" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-400"><a href="https://socrse.github.io/legacy-website/conf2018/talk-abstracts/">Talk Abstracts</a></li>
+	<li id="menu-item-604" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-604"><a href="https://socrse.github.io/legacy-website/conf2018/poster-abstracts/">Poster Abstracts</a></li>
+	<li id="menu-item-941" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-941"><a href="https://socrse.github.io/legacy-website/conf2018/build-run-rse-panel-members/">Panel discussion</a></li>
+	<li id="menu-item-981" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-978 current_page_item menu-item-981"><a href="https://socrse.github.io/legacy-website/conf2018/programme/slides-recordings/">Slides & Recordings</a></li>
+</ul></li>
+<li id="menu-item-952" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-952"><a href="https://socrse.github.io/legacy-website/conf2018/for-delegates/">For delegates</a>
+<ul class="sub-menu"><li id="menu-item-953" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-953"><a href="https://socrse.github.io/legacy-website/conf2018/for-delegates/">During the conference</a></li>
+	<li id="menu-item-603" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-603"><a href="https://socrse.github.io/legacy-website/conf2018/registration/">Registration</a></li>
+</ul></li>
+<li id="menu-item-131" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-131"><a href="https://socrse.github.io/legacy-website/conf2018/venue/">Venue</a></li>
+<li id="menu-item-286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-286"><a href="https://socrse.github.io/legacy-website/conf2018/sponsors/">Sponsors</a></li>
+</ul><div id="sb-search" class="sb-search">
+                            <span class="sb-icon-search"><i class="fa fa-search"></i></span>
+                        </div>
+                                            </div>
+                                            <div id="sb-search-res" class="sb-search-res">
+                            <span class="sb-icon-search"><i class="fa fa-search"></i></span>
+                        </div>
+                                            </nav><div class="inner-wrap masonic-search-toggle">
+                        
+<form role="search" method="get" class="searchform clear" action="https://socrse.github.io/legacy-website/conf2018/">
+   <div class="masonic-search">
+      <label class="screen-reader-text">Search for:</label>
+      <input type="text" value="" name="s" placeholder="Type and hit enter..."></div>
+</form>                    </div>
+
+                                            <div class="blog-header clear">
+                            <article class="wrapper"><div class="blog-site-title">
+                                                                                                                        <h1>Slides & Recordings</h1>
+                                                                                                                    </div>
+
+                                    
+                                    </article></div>
+                                                            </header><div class="site-content">
+   <div id="container" class="wrapper clear">
+      <div class="primary">
+
+         
+            
+<article id="post-978" class="blog-post post-978 page type-page status-publish hentry"><div class="entry-content">
+      <div class="underline"></div>
+      <hr><h2>Hands-on workshops</h2>
+<details id="getting-more-python-performance-with-intel-optimized-distribution-for-python"><summary><strong>Getting more Python Performance with Intel® optimized Distribution for Python</strong><br><em>Jim Cownie</em> <img data-attachment-id="255" data-permalink="https://socrse.github.io/legacy-website/conf2018/rse2018/intsft_1s/" data-orig-file="https://i0.wp.com/rse.ac.uk/conf2018/wp-content/uploads/sites/3/2018/03/intSFT_1s-e1521620421881.png?fit=177%2C150&ssl=1" data-orig-size="177,150" data-comments-opened="1" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="intSFT_1s" data-image-description="" data-medium-file="https://i0.wp.com/rse.ac.uk/conf2018/wp-content/uploads/sites/3/2018/03/intSFT_1s-e1521620421881.png?fit=300%2C255&ssl=1" data-large-file="https://i0.wp.com/rse.ac.uk/conf2018/wp-content/uploads/sites/3/2018/03/intSFT_1s-e1521620421881.png?fit=177%2C150&ssl=1" class="wp-image-255 alignleft" src="https://i0.wp.com/rse.ac.uk/conf2018/wp-content/uploads/sites/3/2018/03/intSFT_1s.png?resize=67%2C57" alt="" width="67" height="57" data-recalc-dims="1"></summary><p>The slides used during the workshops can be downloaded from <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2018/11/RSE18_Intel_Python_Workshop.pdf">RSE18_Intel_Python_Workshop</a>.</p>
+<p>The K-Means example used is pretty close to the one available from the scikit-learn examples at <a href="http://ogrisel.github.io/scikit-learn.org/sklearn-tutorial/auto_examples/cluster/plot_color_quantization.html" target="_blank" rel="noopener">http://ogrisel.github.io/scikit-learn.org/sklearn-tutorial/auto_examples/cluster/plot_color_quantization.html</a>.</p>
+<p>A complex version of the Black Scholes demo is available from Intel’s Python TCEs at <a href="https://github.com/triskadecaepyon/ep2017_tutorial_tune_performance" target="_blank" rel="noopener">https://github.com/triskadecaepyon/ep2017_tutorial_tune_performance</a></p>
+</details><p> </p>
+<details id="using-singularity-for-high-performance-computing"><summary><strong>Using Singularity for High Performance Computing</strong><br><em>Mihai Duta, Diamond Light Source<br>
+Andrew Gittings, University of Oxford</em></summary><blockquote><p>The materials for the workshop have been made available at <a href="https://github.com/mcduta/RSE-2018" target="_blank" rel="noopener"> https://github.com/mcduta/RSE-2018</a></p></blockquote>
+</details><p> </p>
+<details id="data-vizualisation-with-shiny"><summary><strong>Data vizualisation with Shiny</strong><br><em>David Mawdsley, University of Manchester<br>
+Louise Lever, University of Manchester</em></summary><blockquote><p>The workshop materials are available at <a href="https://uomresearchit.github.io/RSE18-shiny-workshop/" target="_blank" rel="noopener"> https://uomresearchit.github.io/RSE18-shiny-workshop/</a>. A snapshot of the workshop is available at <a href="http://DOI%2010.5281/zenodo.1409659" target="_blank" rel="noopener">DOI 10.5281/zenodo.1409659</a></p></blockquote>
+</details><p> </p>
+<details id="make-testing-easy-with-pytest"><summary><strong>Make testing easy with pytest</strong><br><em>Matt Williams, University of Bristol</em></summary><blockquote><p>The slides used during the workshops can be downloaded from <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2018/11/pytest_rse18.pdf">pytest_rse18</a>. The materials for the workshops have been made available at <a href="https://github.com/milliams/python_testing" target="_blank" rel="noopener"> https://github.com/milliams/python_testing</a></p></blockquote>
+</details><p> </p>
+<details id="a-tried-and-tested-workflow-for-software-quality-assurance"><summary><strong>A tried-and-tested workflow for software quality assurance</strong><br><em>Mark Woodbridge, Research Computing Service, Imperial College London<br>
+Mayeul d’Avezac, Research Computing Service, Imperial College London</em></summary><blockquote><p>The materials for the workshop have been made available at <a href="https://doi.org/10.5281/zenodo.1409199" target="_blank" rel="noopener"> https://doi.org/10.5281/zenodo.1409199</a></p></blockquote>
+</details><p> </p>
+<h2>Talks Slides and Downloads</h2>
+<div>
+<p><strong>The first year in the life of a Research Software Group</strong><br>
+Andrew Edmondson (Advanced Research Computing, University of Birmingham)<br><a href="https://drive.google.com/open?id=1GvG8uAt0UpvSNS2i8UanFiDvCnLs5wnJ">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackD-Session3-Talk2.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>The Research Software Engineer Culture Shock</strong><br>
+Andrew Williams (University of Bristol)<br><a href="https://drive.google.com/file/d/1nu-1KRM0P5MCf8vPRjZxPufzCdTuVhMV/view?usp=sharing">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackD-Session3-Talk1.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Building Nordic-RSE: why and how?</strong><br>
+Radovan Bast, Anne Fouilloux, Bjørn Lindi, Radek Lonka, Sri Harsha Vathsavayi, Thor Wikfeldt (University of Oslo, Department of Geosciences)<br><a href="https://drive.google.com/open?id=1rQM6Ah_Pqv-0ReD0Ta0tCO2Hk3-rxe9w">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackA-Session1-Talk2.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>RSE Trainings at DLR 2.0 – What we’ve learned from 1.0</strong><br>
+Carina Haupt, Michael Meinel (German Aerospace Center (DLR))<br><a href="https://drive.google.com/open?id=1VwIZtMcpSXTh_tdunXROcxqcl5Qo9I0d">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackC-Session3-Talk3.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Be prepared to be unpopular: tips on shutting services down</strong><br>
+Catherine Jones (Science and technology Facilities Council)<br><a href="https://drive.google.com/open?id=1qe7urSXo6AFiuSsn-I--0ObTFomxaA-Z">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackB-Session3-Talk2.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Easy, fast, and robust data analysis with modern C++</strong><br>
+Corentin Schreiber (University of Oxford)<br><a href="https://drive.google.com/open?id=1jd0kmoIcOi04LqchjfBKlMVDZCC6XKSV">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackA-Session3-Talk4.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Maximising the value of research software – a research funder perspective</strong><br>
+David Carr (Wellcome Trust)<br><a href="https://drive.google.com/open?id=1fVRPUfxopREng_OK0tQCacxFaGliguR-">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackA-Session2-Talk2.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Nammu and Oracc: digital humanities software in the sustainable development of Iraqi history and heritage</strong><br>
+Eleanor Robson (University College London)<br><a href="https://drive.google.com/open?id=1-YuPluSJXhqaegiQs6Nb1f5_RzmCo1BB">View slides</a></p>
+</div>
+<div>
+<p><strong>Robot Routing with a Quantum Processor</strong><br>
+James Clark (STFC Hartree Centre)<br><a href="https://jameshclrk.com/rse-presentation/">View slides</a></p>
+</div>
+<div>
+<p><strong>Dealing with research software: recommendations for best practices</strong><br>
+Kaja Scheliga (Helmholtz Association)<br><a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/02/rse_scheliga_04092018_final.pdf">View slides</a></p>
+</div>
+<div>
+<p><strong>The Knowledge Makers</strong><br>
+Matteo Cancellieri (Open University)<br><a href="https://drive.google.com/open?id=13sDumVp5DgkwWUWWXqd6FoqVTbvfNAK8">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackA-Session1-Talk3.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Harnessing AI for Research</strong><br>
+Matthew Johnson (Microsoft Research, Cambridge)<br><a href="https://drive.google.com/open?id=1q69RDu01g9G0dxJUXcs-thzUXGNJziZq">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackB-Session5-Talk3.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Surviving as an Apprentice Developer</strong><br>
+Matthew Richards (STFC)<br><a href="https://drive.google.com/open?id=1d6Cg8v5HZ1jRMRcH-9QJeMINQV5WPhHK">View slides</a></p>
+</div>
+<div>
+<p><strong>Interactive Research Data Visualisation by Drag-and-Drop</strong><br>
+Matthew Walker (University of Southampton)<br><a href="https://drive.google.com/open?id=1jA4DC1G9aG8mjtAMXMYVF0Im3SNPj2p5">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackA-Session4-Talk1.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>UiOHive: a local Hub-node organization for building competence in IoT</strong><br>
+John F. Burkhart, Ana Costa Conrado, Simom Filhol, Anne Fouilloux (University of Oslo, Department of Geosciences)<br><a href="https://drive.google.com/open?id=1VV9Qv5cjlYgTuifDM7RAc1FZZcvs7yN_">View slides</a></p>
+</div>
+<div>
+<p><strong>Fast code with just enough effort</strong><br>
+Pashmina Cameron (Microsoft Research)<br><a href="https://drive.google.com/open?id=1q0gAgQG7djJ-Z54oWJeEMDoqtjOtkcFh">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackA-Session3-Talk1.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>“YOU HAVE 0 CREDIT – PLEASE INSERT C̶O̶I̶N̶ FILE”: The Citation File Format</strong><br>
+Stephan Druskat (Humboldt-Universität zu Berlin, Department of German Studies and Linguistics)<br><a href="https://sdruskat.net/rse18-citation-file-format/">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackB-Session4-Talk1.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Surviving the vacuum: A strategy for sustaining software in the absence of RSE teams</strong><br>
+Stephan Druskat, Thomas Krause (Humboldt-Universität zu Berlin, Department of German Studies and Linguistics)<br><a href="https://drive.google.com/open?id=1m6-X2HdGIZ4_zTnmko3S41kd_zyMVb5q">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackB-Session3-Talk4.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>The challenges of creating an interactive big data visualisation platform for meteorology</strong><br>
+Stephen Haddad (Met Office)<br><a href="https://drive.google.com/open?id=1me_UTqk3ge5DBoULAj-RvNSF9HZX2Q3O">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackA-Session4-Talk3.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Software in the brave new world of UKRI</strong><br>
+Susan Morrell, Eddie Clarke (EPSRC)<br><a href="https://drive.google.com/open?id=1xVm_lvDm0zj-FIdfvJH1m55i1xnQzbIf">View slides</a></p>
+</div>
+<div>
+<p><strong>Software Engineering Guidelines – From Theory to Practice</strong><br>
+Tobias Schlauch, Carina Haupt (German Aerospace Center (DLR))<br><a href="https://drive.google.com/open?id=1K5nh5h1OPWYOgMcgaPbRK1T_iL2KvBr3">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackB-Session1-Talk1.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Code is Science: a manifesto for open source code in science</strong><br>
+Yo Yehudi (University of Cambridge)<br><a href="https://docs.google.com/presentation/d/1hezGCvpwLnijSmYH-43q6A9T10sxMs5-kI7e_RBAMJc/edit#slide=id.p">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackB-Session4-Talk2.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>SIP: Prototyping the Science Data processing for the worlds largest radio telescope.</strong><br>
+Benjamin Mort (The University of Oxford’s e-Research Centre)<br><a href="https://drive.google.com/open?id=1rPh2DPGuLfvTJ5C5rEk9rdGStaFgGc8d">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackB-Session1-Talk2.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Measuring the financial return on investment of the ARCHER eCSE Programme</strong><br>
+Lorna Smith, Chris Johnson, Xu Guo, Neelofer Banglawala, Alan Simpson (EPCC, The University of Edinburgh)<br><a href="https://drive.google.com/open?id=1_-nm8bM_NOF-Scm578q9MIiIDXJ6FNq4">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackB-Session4-Talk4.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>“So, we can toss the cluster in a skip, right?”: Experiences of computational biology in the clouds</strong><br>
+Matthew Hartley (The John Innes Centre)<br><a href="https://drive.google.com/open?id=1su0UxOWQO0b53641cwDQxW2p0P_VnA49">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackA-Session5-Talk2.mp3">Download audio</a></p>
+</div>
+<div>
+<p><strong>Challenges and pathways to sustainability in scientific software ecosystems</strong><br>
+James Howison (University of Texas at Austin)<br><a href="https://drive.google.com/open?id=1i1uivzE-btkyvxAkoLxbiSCLdzZ6n3X5">View slides</a></p>
+</div>
+<div>
+<p><strong>Lessons learnt from building the RSE community in Cardiff University</strong><br>
+Ian Harvey, Unai Lopez-Novoa (Cardiff University)<br><a href="https://drive.google.com/open?id=1Zo6hYpiEbBPjGpwglqBRyhrwGO5-okPK">View slides</a></p>
+</div>
+<div>
+<p><strong>Adventuring in the cloud with materials chemistry simulations</strong><br>
+Ardita Shkurti~, David Bray~, Richard Anderson^ (~STFC SCD, ^STFC Hartree Centre)<br><a href="https://drive.google.com/file/d/1LBiFtXF7kSE58WwXQ3K2xJwc82DwlPND/view?usp=sharing">View slides</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/01/TrackA-Session5-Talk4.mp3">Download audio</a></p>
+<p><strong>How Reusable Is Software Mentioned in Open Access Papers? an Empirical Study Using code-cite</strong><br>
+Neil Chue Hong, Robin Long, Martin O’Reilly, Naomi Penfold, Isla Staden, Alexander Struck, Shoaib Sufi, Matthew Upson, Andrew Walker, Kirstie Whitaker; Software Sustainability Institute, University of Edinburgh<br><a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/02/RSE18CodeCitePresentation.slides.html">View Slides</a> | <a href="https://github.com/softwaresaved/code-cite/blob/master/notebooks/RSE18CodeCitePresentation.ipynb">View Notebook on GitHub</a> | <a href="https://socrse.github.io/legacy-website/conf2018/wp-content/uploads/sites/3/2019/02/TrackB-Session4-Talk3.mp3">Download Audio</a></p>
+</div>
+<h2>Poster Downloads</h2>
+<div>
+<p><strong>Parsl: Scripting Scalable Workflows in Python</strong><br>
+Yadu Babuji, Kyle Chard, Ian Foster, Daniel S. Katz, Mike Wilde, Anna E. Woodard, Justin M. Wozniak (University of Illinois Urbana-Champaign, University of Chicago, Argonne National Laboratory)<br><a href="https://doi.org/10.6084/m9.figshare.7016936.v1">View poster</a></p>
+</div>
+<div>
+<p><strong>Defining Policies to Turn a Team and Project Around</strong><br>
+Jason M. Gates (Sandia National Laboratories)<br><a href="https://drive.google.com/open?id=1tqkZ141s8eSHpzVLQeJwWUU_2dpNlCUB">View poster</a></p>
+</div>
+<div>
+<p><strong>Leveraging graph databases for big data management</strong><br>
+Mike Gavrielides, Wei Xing (The Francis Crick Institute)<br><a href="https://drive.google.com/open?id=1KMjnHtiuM0cA7-KiU1oWYLji8TrDIR-p">View poster</a></p>
+</div>
+<div>
+<p><strong>Testing and Auto-Tuning GPU code with Kernel Tuner</strong><br>
+Ben van Werkhoven (Netherlands eScience Center)<br><a href="https://drive.google.com/open?id=1EQS3d6W3e2rM64iitftJia2Mlco6RA99">View poster</a></p>
+</div>
+<div>
+<p><strong>Implementation and performance of an AVX512 extension to OpenQCD</strong><br>
+Jarno Rantaharju (Swansea Academy of Advanced Computing)<br><a href="https://drive.google.com/open?id=1ke4P8r64qJNEwOj0jsPGIw-w_G4tj1AV">View poster</a></p>
+</div>
+<div>
+<p><strong>Supporting community of GAP developers and package authors</strong><br>
+Alexander Konovalov (University of St Andrews)<br><a href="https://drive.google.com/open?id=1jN4OuS8uPhIhtYJmkbVGqrxXFDAhRiD7">View poster</a></p>
+</div>
+<div>
+<p><strong>Improving Performance and Scalability of NISMOD: National Infrastructure Systems Model</strong><br>
+Roald Schoenmakers (University of Oxford)<br><a href="https://drive.google.com/open?id=1WKIX6jPgSbSpd6qPRDxw7sqj3PCh2rpY">View poster</a></p>
+</div>
+         </div>
+
+</article></div>
+      
+<div class="secondary">
+   <aside id="nav_menu-2" class="blog-post widget widget_nav_menu"><div class="widget-title"><h3>Quick Action Links</h3></div><div class="menu-action-links-container"><ul id="menu-action-links" class="menu"><li id="menu-item-907" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-907"><a href="https://socrse.github.io/legacy-website/conf2018/programme/">Programme</a>
+<ul class="sub-menu"><li id="menu-item-980" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-978 current_page_item menu-item-980"><a href="https://socrse.github.io/legacy-website/conf2018/programme/slides-recordings/">Slides & Recordings</a></li>
+</ul></li>
+<li id="menu-item-954" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-954"><a href="https://socrse.github.io/legacy-website/conf2018/for-delegates/">Info for delegates</a></li>
+<li id="menu-item-908" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-908"><a href="https://socrse.github.io/legacy-website/conf2018/contacts/">Contacts</a></li>
+<li id="menu-item-909" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-909"><a href="https://socrse.github.io/legacy-website/conf2018/venue/">Venue</a></li>
+</ul></div></aside><aside id="nav_menu-3" class="blog-post widget widget_nav_menu"><div class="widget-title"><h3>Further Information</h3></div><div class="menu-info-links-container"><ul id="menu-info-links" class="menu"><li id="menu-item-104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-104"><a href="https://socrse.github.io/legacy-website/conf2018/accommodation/">Accommodation</a></li>
+<li id="menu-item-130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-130"><a href="https://socrse.github.io/legacy-website/conf2018/venue/">Venue</a></li>
+<li id="menu-item-239" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-239"><a href="https://socrse.github.io/legacy-website/conf2018/travel-bursaries/">Travel bursaries</a></li>
+<li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240"><a href="https://socrse.github.io/legacy-website/conf2018/diversity-statement/">Diversity Statement</a></li>
+<li id="menu-item-694" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-694"><a href="https://socrse.github.io/legacy-website/conf2018/poster-guidance/">Poster Guidance</a></li>
+<li id="menu-item-879" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="https://socrse.github.io/legacy-website/conf2018/code-of-conduct/">Code of Conduct</a></li>
+</ul></div></aside><aside id="eu_cookie_law_widget-3" class="blog-post widget widget_eu_cookie_law_widget"><div class="hide-on-button" data-hide-timeout="30" data-consent-expiration="180" id="eu-cookie-law">
+	<form method="post">
+		<input type="submit" value="Close and accept" class="accept"></form>
+
+	Privacy & Cookies: This site uses cookies. By continuing to use this website, you agree to their use. <br>
+To find out more, including how to control cookies, see here:
+	<a href="https://automattic.com/cookies/">
+		Cookie Policy	</a>
+</div>
+</aside></div>   </div>
+</div>
+
+
+</div>
+<footer class="footer-background"><div class="footer-content wrapper clear">
+      <div class="clear">
+                                 </div>
+      <div class="copyright clear">
+         <p class="license">Content on this site is licensed under a <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License © 2020</a></p>
+         Powered by <a href="http://wordpress.org" target="_blank" title="WordPress"><span>WordPress</span></a> <br> Theme: Masonic by <a href="http://themegrill.com/themes/masonic" target="_blank" title="ThemeGrill" rel="author"><span>ThemeGrill</span></a>      </div>
+   </div>
+   <div class="angled-background"></div>
+</footer><div style="display:none">
+	</div>
+<script>
+    jQuery(document).ready(function () {
+		jQuery.post('https://socrse.github.io/legacy-website/conf2018?ga_action=googleanalytics_get_script', {action: 'googleanalytics_get_script'}, function(response) {
+			var s = document.createElement("script");
+			s.type = "text/javascript";
+			s.innerHTML = response;
+			jQuery("head").append(s);
+		});
+    });
+</script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/plugins/jetpack/_inc/build/photon/photon.min.js"></script><script type="text/javascript" src="https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=202009"></script><script type="text/javascript" src="https://secure.gravatar.com/js/gprofiles.js?ver=2020Febaa"></script><script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/plugins/jetpack/modules/wpgroho.js"></script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/themes/masonic/js/search-toggle.js"></script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/themes/masonic/js/fitvids/jquery.fitvids.js"></script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/themes/masonic/js/fitvids/fitvids-setting.js"></script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/themes/masonic/js/skip-link-focus-fix.js"></script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/themes/masonic/js/jquery.bxslider/jquery.bxslider.min.js"></script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/plugins/jetpack/_inc/build/widgets/eu-cookie-law/eu-cookie-law.min.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/socrse.github.io\/legacy-website\/conf2018\/wp-admin\/admin-ajax.php","nonce":"57de4f04fe","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/socrse.github.io\/legacy-website\/conf2018\/wp-login.php?redirect_to=https%3A%2F%2Frse.ac.uk%2Fconf2018%2Fprogramme%2Fslides-recordings%2F","blog_id":"3","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>"};
+/* ]]> */
+</script><script type="text/javascript" src="https://socrse.github.io/legacy-website/conf2018/wp-content/plugins/jetpack/_inc/build/carousel/jetpack-carousel.min.js"></script><script type="text/javascript" src="https://stats.wp.com/e-202009.js" async="async" defer></script><script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.9.1',blog:'142427950',post:'978',tz:'0',srv:'rse.ac.uk'} ]);
+	_stq.push([ 'clickTrackerInit', '142427950', '978' ]);
+</script><div class="modal-bg"></div>
+<div class="content-modal">
+    <div class="content-modal-inner">
+        <h2></h2>
+        <h3></h3>
+        <div class="text-content"></div>
+    </div>
+    <div class="content-modal-close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+</div>
+
+<script>
+
+
+jQuery(document).ready(function () {
+
+var contentLoaded = false;
+var abstracts = {};
+var currentId = null;
+
+
+function loadContent() {
+
+  // Call talk and workshop abstract pages
+
+  jQuery.when(jQuery.get("https://socrse.github.io/legacy-website/conf2018/talk-abstracts/"), jQuery.get("https://socrse.github.io/legacy-website/conf2018/workshop-abstracts/")).done(function (t, w) {
+
+    data = [t[0], w[0]]
+
+    data.forEach(function (d) {
+      var page = jQuery(d);
+      var article = page.find("article.type-page")
+      var talks = article.find("details")
+
+
+      talks.each(function (index, talk) {
+
+        var talkData = {
+          "title": "",
+          "author": "",
+          "affiliation": "",
+          "abstract": "",
+          "image": {}
+        }
+
+        talkData.title = jQuery(talk).find("summary strong").text().trim()
+        talkData.slug = jQuery(talk).attr("id")
+
+        talkData.author = jQuery(talk).find("summary em").html().trim()
+        talkData.image = jQuery(talk).find("img").length > 0 ? {
+          "src": jQuery(talk).find("img")[0].src,
+          "content": jQuery(talk).find("img")[0].outerHTML
+        } : null
+        talkData.affiliation = jQuery(talk).find("summary > em").length > 1 ? jQuery(talk).find("summary em").eq(1).html().trim() : "";
+        talkData.abstract = jQuery(talk).find("blockquote").html()
+
+        abstracts[talkData.slug] = talkData
+
+
+      })
+    })
+
+    if (currentId) {
+      $modalContent.html(abstracts[currentId].abstract)
+      showModal();
+    }
+
+    contentLoaded = true;
+
+
+  })
+
+}
+
+$modalBg = jQuery(".modal-bg");
+$modal = jQuery(".content-modal");
+
+$modal.find(".content-modal-close").add($modalBg).on("click", function () {
+  hideModal()
+})
+
+$modalInner = $modal.find(".content-modal-inner")
+$modalTitle = $modal.find(".content-modal-inner h2")
+$modalAuthors = $modal.find(".content-modal-inner h3")
+$modalContent = $modal.find(".content-modal-inner .text-content")
+
+hideModal = function () {
+  jQuery("html").removeClass("abstract-modal-open");
+  $modal.hide()
+  $modalBg.hide()
+}
+
+showModal = function () {
+  jQuery("html").addClass("abstract-modal-open");
+  $modal.show()
+  $modalBg.show()
+  $modalInner.scrollTop(0);
+}
+
+$talkLinks = jQuery("[href^='/conf2018/talk-abstracts']");
+$workshopLinks = jQuery("[href^='/conf2018/workshop-abstracts']");
+
+$talkLinks.add($workshopLinks).on("click", function (e) {
+  e.preventDefault();
+
+  currentId = e.target.href.split("#")[1];
+
+  if (contentLoaded !== true) {
+    $modalTitle.text(jQuery(e.target).text())
+    $modalContent.html("Loading...")
+    showModal();
+    loadContent();
+  } else {
+    $modalTitle.text(jQuery(e.target).text())
+    $modalContent.html(abstracts[currentId].abstract)
+    showModal();
+  }
+  
+})
+
+})
+
+
+
+
+</script></body></html>
