@@ -1,0 +1,5 @@
+Sitemap: https://socrse.github.io/legacy-website/sitemap.xml
+Sitemap: https://socrse.github.io/legacy-website/news-sitemap.xml
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
