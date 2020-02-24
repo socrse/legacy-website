@@ -1,0 +1,16 @@
+.entry-author {display: none;}
+.angled-background {background: none;}
+.site-header-text {bottom: 250px;position: relative;}
+.logo-img-holder img {width: 165px;height: 210px;}
+.minitweets {float: none;padding: 5px;}
+.minitweets-end {display: none;}
+.primary h2 {margin: 25px 0 10px;}
+.job-title {margin-bottom: 20px;}
+body.page-id-46 article.page ul {padding: 0;margin: 0;list-style: none;}
+body.page-id-46 article.page li {padding: 60px 20px 20px;margin-bottom: 20px;position: relative;border-bottom: 1px solid #ddd;}
+body.page-id-46 article.page li:last-child {border-bottom: none;}
+body.page-id-46 article.page li strong {display: block;padding: 10px;color: #97316e;position: absolute;width: 100%;top: 0;left: 0;font-size: 1.2em;}
+a.call-to-action {background-color: #dff0d8;display: block;color: #3c763d;padding: 10px 20px;text-align: center;border: 1px solid #d6e9c6;}
+.call-action-button {display: inline-block;text-align: center;vertical-align: middle;padding: 12px 24px;border: 1px solid #802a5e;border-radius: 3px;background: #97316e;background: -webkit-gradient(linear,left top,left bottom,from(#97316e),to(#802a5e));background: -moz-linear-gradient(top,#97316e,#802a5e);background: linear-gradient(to bottom,#97316e,#802a5e);text-shadow: #4c1937 1px 1px 1px;font: normal normal bold 20px arial;color: #fff;text-decoration: none;}
+.call-action-button:hover, .call-action-button:focus {border: 1px solid #97316e;background: #b53b84;background: -webkit-gradient(linear,left top,left bottom,from(#b53b84),to(#9a3271));background: -moz-linear-gradient(top,#b53b84,#9a3271);background: linear-gradient(to bottom,#b53b84,#9a3271);color: #fff;text-decoration: none;}
+.call-action-button:active {background: #5b1d42;background: -webkit-gradient(linear,left top,left bottom,from(#5b1d42),to(#802a5e));background: -moz-linear-gradient(top,#5b1d42,#802a5e);background: linear-gradient(to bottom,#5b1d42,#802a5e);}
